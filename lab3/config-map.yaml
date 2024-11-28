@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: react-app-config-map
+data:
+  REACT_APP_USERNAME: "MaxOnGreen"
+  REACT_APP_COMPANY_NAME: "ITMO"

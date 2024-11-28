@@ -1,0 +1,10 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: vault
+  labels:
+    app: vault
+spec:
+  containers:
+    - name: vault-container
+      image: hashicorp/vault:latest

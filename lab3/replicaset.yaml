@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: itdt-contained-frontend-deployment
+  labels:
+    app: itdt-contained-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: itdt-contained-frontend
+  template:
+    metadata:
+      labels:
+        app: itdt-contained-frontend
+    spec:
+      containers:
+        - name: itdt-contained-frontend
+          image: ifilyaninitmo/itdt-contained-frontend:master
+          envFrom:
+            - configMapRef:
+                name: react-app-config-map
+          ports:
+            - containerPort: 80
